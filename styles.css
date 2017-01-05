@@ -12,8 +12,8 @@
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/387928/sky.gif) no-repeat center;
   background-size: cover;
   position: relative;
-  margin: 50px auto;
-  height: 450px;
+  margin: 30px auto;
+  height: 400px;
   width: 800px;
 }
 
@@ -36,3 +36,18 @@ body {
 	margin-left: 23%;
 	font-family: Frontage, sans-serif;
 }
+
+h3 {
+	padding-top: 2.5%;
+}
+
+p {
+	font-family: sans-serif;
+}
+
+.capitalize{
+	font-family: sans-serif;
+	text-transform: capitalize;
+}
+
+

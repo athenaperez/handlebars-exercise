@@ -23,18 +23,41 @@ var randomUser = {
   ]
 }
 
-//handlebars step one: grap the html from the script tag
-var entryHTML = $("#random-user").html();
+//ajax and promise
+function getRandomUser(){
+  return new Promise(function(resolve, reject) {
+    $.ajax({
+      url: `https://randomuser.me/api`
+    })
+    .then(function(data, textStatus, XHR){
+      resolve(data)
+    })
+  })
+}
 
-//handlebars step two: compile it into a template
-var entryTemplate = Handlebars.compile(entryHTML);
+//change randomUser variable to getRandomUser function
+randomUser = getRandomUser()
 
-//handlebars step three:render the HTML by passing the data to the template
-var entryOutput = entryTemplate(randomUser);
+//.then for timing
+randomUser.then(function(val){
+  randomUser = val;
+}).then(loadRandomUser);
 
-//handlebars step four: put the complete HTML into the DOM
-$("#randomUserOutput").append(entryOutput);
 
+//add function loadRandomUser, so it can be called in the Promise at the appropriate time
+function loadRandomUser() {
+    //handlebars step one: grap the html from the script tag
+    var entryHTML = $("#random-user").html();
+
+    //handlebars step two: compile it into a template
+    var entryTemplate = Handlebars.compile(entryHTML);
+
+    //handlebars step three:render the HTML by passing the data to the template
+    var entryOutput = entryTemplate(randomUser);
+
+    //handlebars step four: put the complete HTML into the DOM
+    $("#randomUserOutput").append(entryOutput);
+}
 
 
 

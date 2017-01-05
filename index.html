@@ -6,35 +6,34 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<div class="box">
-	  <img id="kitten" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/387928/sweater-kitten.png">
-</div>
 
-
-
+<!-- kitten animation -->
+	<div class="box">
+		  <img id="kitten" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/387928/sweater-kitten.png">
+	</div>
 
 <!-- output div -->
 	<div id="randomUserOutput"></div>
-
-
 
 
 <!-- adding handlebars template -->
 	<script id="random-user" type="text/x-handlebars-template">
 		<div class="name">
 			<h2>Name:</h2>
-				<p>{{results.0.name.first}}
+				<p class="capitalize">{{results.0.name.first}}
 				   {{results.0.name.last}}
 				</p>
 
-				<h4>Address:</h4>
-				<p>{{results.0.location.street}}
-				   {{results.0.location.city}}
-				   {{results.0.location.state}}
+				<h3>Address:</h3>
+				<p class="capitalize">
+				   {{results.0.location.street}},
+				   {{results.0.location.city}},
+				   {{results.0.location.state}},
 				   {{results.0.location.postcode}}
 				</p>
-				<h4>Email:</h4>
+				<h3>Email:</h3>
 				<p>{{results.0.email}}</p>
+				<h3>Photo:</h3>
 				<img src="{{results.0.picture.medium}}">
 		</div>
 	</div>
