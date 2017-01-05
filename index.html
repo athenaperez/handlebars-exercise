@@ -17,7 +17,7 @@
 <!-- adding handlebars template -->
 	<script id="random-user" type="text/x-handlebars-template">
 		<div class="name">
-			<h4>Name:</h4>
+			<h2>Name:</h2>
 				<p>{{results.0.name.first}}
 				   {{results.0.name.last}}
 				</p>
@@ -29,9 +29,10 @@
 				   {{results.0.location.postcode}}
 				</p>
 				<h4>Email:</h4>
-				<p>{{results.0.email}}
-			</div>
+				<p>{{results.0.email}}</p>
+				<img src="{{results.0.picture.medium}}">
 		</div>
+	</div>
 	</script>
 
 
