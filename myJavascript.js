@@ -23,8 +23,6 @@ var randomUser = {
   ]
 }
 
-
-
 //handlebars step one: grap the html from the script tag
 var entryHTML = $("#random-user").html();
 
